@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery event</title>
+
+<style type="text/css">
+	.bg { background : yellow; }
+	.border { border : 3px dotted red; }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	// 원래 있던 이벤트 연결 함수 : bind()/one()
+	$('li').one('click',function(){ // one은 한번만 클릭 가능하게 함 
+		$('#result').text($(this).text());
+	});
+	
+	$('li').bind('click',function(){
+		var liTxt = $(this).text(); // jquery (가끔 인식 안될 때.. 밑에 js용 코드를 적자)
+		// var liTxt = this.innerHTML; // js
+		$('#result').text(liTxt);
+	});
+	
+	// -----------
+	// $('ul')기존에 있는 ul객체를 찾는 것
+	// $('<ul>')새로운 객체를 만드는 것
+	
+	
+	$('h1').bind('click',function(){ 
+		var n = $('<li/>').text(new Date());
+		$('ul').append(n);
+	});
+	
+	// 동적으로 생성된 요소에는 이벤트 연결 불가
+	
+	$('ul').on('click','li',function(){ 
+		$('#result').text($(this).text());
+	});
+	
+	
+	
+	
+	
+})
+
+
+
+</script>
+
+
+</head>
+<body>
+	<h1>제이쿼리 이벤트</h1>
+	 <ul> <!-- 고정 -->
+		<li>부에노스 아이레스</li> <!-- 동적 -->
+		<li>바르셀로나</li>
+		<li>리마</li>
+		<li>라파스</li>
+	 </ul>	
+	<div id="result"></div>
+</body>
+</html>
