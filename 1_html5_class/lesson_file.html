@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+table{
+	border:2px groove black;
+}
+td {
+	border:1px solid black;
+    table-layout:fixed; height: 60px; width:100px;
+    background-color: lightyellow;
+}
+
+tr.first>td { background-color: lightblue; }
+
+</style>
+
+<script>
+
+window.onload = function(){
+
+	let td = document.getElementsByTagName('td');
+	
+	for(let i = 0; i<td.length; i++){
+		td[i].addEventListener('click', function(event){
+			alert('OK~')
+			let tdp = event.target.getAttribute('data-price');
+			window.alert(tdp);
+		});
+	}
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<table id = "tbl">
+
+<thead>
+  <tr class="first">
+    <td class = "item" data-price = "1000">커피</td>
+    <td class = "item" data-price = "2000">녹차</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class = "item" data-price = "3000">케익</td>
+    <td class = "item" data-price = "4000">빵</td>
+  </tr>
+  <tr>
+    <td class = "item" data-price = "5000">과자</td>
+    <td class = "item" data-price = "6000">초코렛</td>
+  </tr>
+</tbody>
+
+</table>
+
+</body>
+</html>

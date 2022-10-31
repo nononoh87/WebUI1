@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_Simple Form</title>
+
+<!-- 외부 CSS 연결 -->
+<link type = 'text/css' rel = 'stylesheet' href = '/WebUI/2_css_class/css/myform.css'>
+
+
+
+
+
+</head>
+<body>
+<form>
+	<fieldset>
+		<legend>로그인 정보</legend>
+		<ol>
+			<li>
+				<label for='id'>아이디</label>
+				<input type='text' name='id' autofocus/>
+			</li>
+			<li>
+				<label for='pwd'>비밀번호</label>
+				<input type='password' name='pwd'/>
+			</li>
+			<li>
+				<label for='checkPwd'>비밀번호 확인</label>
+				<input type='password' name='checkPwd'/>
+			</li>
+			<li>
+				<label for='level'>회원 등급</label>
+				<input type='text' name='level' value='준회원'/>
+			</li>
+		</ol>
+	</fieldset>
+</form>
+<form>
+	<fieldset>
+		<legend>개인 정보</legend>
+		<ol>
+			<li>
+				<label for='name'>이름</label>
+				<input type='text' name='name' placeholder='5자미만 공백없이' />
+			</li>
+			<li>
+				<label for='email'>메일 주소</label>
+				<input type='email' name='email' placeholder='abcd@domain.com' />
+			</li>
+			<li>
+				<label for='phone'>연락처</label>
+				<input type='tel' name='phone' />
+			</li>
+			<li>
+				<label for='birth'>생일</label>
+				<input type='date' name='birth'/>
+			</li>
+		</ol>
+	</fieldset>
+</form>
+<form>
+	<fieldset>
+		<legend>코딩 숙련도(상,중,하)</legend>
+		<ol>
+			<li> <input type='range'/> </li>
+		</ol>
+	</fieldset>
+</form>
+<form>
+	<fieldset>
+		<input type='submit' value='제출'/>
+	</fieldset>
+</form>
+
+
+</body>
+</html>
