@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Homework - kakao API</title>
+
+</head>
+<body>
+
+<div>주소를 입력하시오</div>
+
+<input type = 'text' id = "result" readonly>
+<input type = 'button' id = "address_kakao" value = '주소 찾기'>
+
+</body>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+
+window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면 카카오 지도 발생
+        
+   	new daum.Postcode({
+           oncomplete: function(data) { //선택시 입력값 세팅
+               document.getElementById("result").value = data.address; // 주소 넣기
+               //document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱을 빼면 자동으로 닫힌다
+           }
+       }).open();
+   });
+}
+
+</script>
+
+
+</html>

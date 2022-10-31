@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	var d = new Date('2023/08/13');
+	document.writeln( d  + '<br/>');
+	document.writeln( d.getYear()  + '<br/>');
+	document.writeln( d.getFullYear()  + '<br/>'); // 연도는 반드시 FullYear로 뽑아야 한다
+	document.writeln( d.getMonth()+1  + '<br/>');
+	document.writeln( d.getDate()  + '<br/>');
+	document.writeln( d.getDay()  + '<hr/>'); // sunday : 0
+
+	var today = new Date();
+	document.writeln( today  + '<br/>');
+	document.writeln( today.toLocaleString()  + '<br/>');
+	document.writeln( today.toGMTString()  + '<br/>');
+	document.writeln( today.toDateString()  + '<hr/>');
+	
+	var day = new Date();
+	day.setFullYear(2025);
+	day.setMonth(5-1);
+	day.setDate(12);
+	document.writeln(day.toDateString() + '<br/>');
+	
+	var today = new Date();
+	today.setMonth(today.getMonth()-3);
+	document.writeln(today.toDateString()+'<br/>')
+	
+	// 현재 날짜에서 20일을 더하면
+	var today = new Date();
+	today.setDate(today.getDate()+20);
+	document.writeln(today.toDateString()+'<br/>')
+	
+	today.setDate(0);
+	document.writeln(today.toDateString()+'<br/>');
+	
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

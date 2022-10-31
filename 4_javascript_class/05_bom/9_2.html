@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function(){
+	var sel = frm.site;
+	for(var i=0; i<sel.length; i++){
+		sel[i].onclick = function(){
+			//alert(this.value);
+			opener.frm1.result.value = this.value;
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+
+<body>
+	<form name="frm">
+		<input type='text' name='result' size='20'/>
+		<br/>
+		<input type="radio" name="site" value='가산'> 가산 <br>
+		<input type="radio" name="site" value='판교' > 판교 <br>
+		<input type="radio" name="site" value='부평'> 부평 <br>
+		<br/>
+	</form>
+	
+
+</body>
+</html>

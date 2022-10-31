@@ -1,0 +1,8 @@
+
+										<JS 군단>
+
+Presentation - HTML CSS JS etc..		HTML CSS JS
+
+Application  - JSP ASP PHP etc..		nodeJS
+
+Database 	 - Oracle MySQL etc..		mongoDB

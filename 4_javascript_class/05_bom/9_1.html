@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function(){
+	
+	winObj = window.open('9_2.html','','width=500, height=250')
+	var sel = frm1.city; 
+	sel.onchange = function(){
+		winObj.frm.result.value = this.value;
+	}
+	
+}
+
+</script>
+
+
+</head>
+<body>
+
+<form name="frm1">
+
+
+	<select name="city" >
+		<option>지역을 선택하시오</option>
+		<option id = "seoul">서울시</option>
+		<option id = "suwon">수원시</option>
+	</select> 
+
+	<input type="text" name="result" size=6>
+
+		
+</form>
+</body>
+</html>

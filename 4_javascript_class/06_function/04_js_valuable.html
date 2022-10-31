@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+	// var 중심으로 확인 -> 추가로 let 확인
+	
+	//1. 글로벌 변수와 지역변수
+	
+/*  	var scope = '글로벌변수';
+		function getValue(){
+		var scope = '지역변수';
+		return scope;
+	}
+	document.write(getValue() + '<br/>'); // 지역변수
+	document.write(scope + '<br/>'); // 글로벌변수 */
+
+	
+	
+	// 2. var를 사용하지 않으면 전부 '글로번 변수' 취급함
+	
+/*  	scope = '글로벌변수';
+	function getValue(){
+		var scope = '지역변수';
+		test = 'test';
+		return scope;
+	}
+	
+	document.write(getValue() + '<br/>'); // 지역변수
+	document.write(scope + '<br/>'); // 글로벌변수 
+	document.write(test + '<br/>'); // 글로벌변수  */
+	
+	// 3. 지역변수 선언은 함수의 앞단에 선언 
+		var scope = '글로벌변수';
+		function getValue(){
+		var scope = '지역변수';
+		document.write('<0>' + scope + '<br/>'); // <0>지역변수
+												// 한칸 위로가면 <0>undefined라는 값이 나옴
+		return scope;
+	}
+	document.write(getValue() + '<br/>'); // 지역변수
+	document.write(scope + '<br/>'); // 글로벌변수
+	
+	// 4. 지역변수 범위 
+	// - var : 함수의 블록만
+	// - let : 모든 중괄호 블럭 안
+		
+	if(true){
+		var i = 100; // 지역변수 아님!! 글로벌 변수임.. 함수한테만 허용. 
+						// if문이나 for문에선 허용되지 않는다
+			// let j = 100; 
+		}
+	
+	document.write ('i = ' + i + '<br/>'); // i = 100
+	// document.write ('j = ' + j + '<br/>'); // 
+	
+ 	for(var a=0; a<4; a++){}
+	document.write ('var...a = ' + a + '<br/>'); // 4 
+	
+	for(let a=0; a<4; a++){}
+	document.write ('let...a = ' + a + '<br/>'); // 위 문단을 주석처리 하고 돌리면 값을 출력할 수 없다
+												// 중괄호 블럭 밖이라 값이 나오지 않는다
+	
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>
